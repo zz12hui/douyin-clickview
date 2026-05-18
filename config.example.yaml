@@ -1,0 +1,44 @@
+# douyin-clickview 配置文件示例
+# 直接运行 python3 -m douyin_clickview 进入交互式模式
+# 配置文件放在: ./config.yaml 或 ~/.douyin-clickview.yaml 自动加载
+
+# === 核心参数 ===
+# 交互式模式会逐一询问，此处可预设默认值
+# video_input: "https://www.douyin.com/video/7055283003722927371"
+visit_count: 10
+watch_seconds: 3
+
+# === 并发 ===
+concurrency: 2
+
+# === 浏览器参数 ===
+headless: false
+browser_type: chromium
+browser_channel: "chrome"    # 使用系统真实 Chrome，反检测效果更好
+# user_data_dir: "/path/to/profile"  # 持久化 profile，复用 cookie
+viewport_width: 1920
+viewport_height: 1080
+device_scale_factor: 1.0
+
+# === 代理（可选） ===
+# proxy: "http://127.0.0.1:8080"
+
+# === 行为参数（默认关闭，需要时手动开启） ===
+comment_interaction: false
+profile_interaction: false
+action_delay_range: [0.8, 2.5]
+watch_jitter: 0.2
+
+# === 间隔 ===
+visit_interval_range: [3.0, 8.0]
+
+# === 超时 ===
+visit_timeout: 30
+max_retries: 1      # 1 = 失败不重试，直接跳过
+retry_base_delay: 2.0
+
+# === 输出 ===
+output_format: text    # text | json | quiet
+log_level: INFO        # DEBUG | INFO | WARNING | ERROR
+# log_file: "/tmp/clickview.log"
+
